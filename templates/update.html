@@ -18,7 +18,11 @@
         <form method="post" novalidate>
           {% csrf_token %}
           {{form|crispy}}
-          <input type="submit" value="Save">
+          
+          <div class="update-choice">
+            <button class="delete"><a href="{% url 'home' %}">Cancel</a></button>
+            <input type="submit" value="Save">
+          </div>
         </form>
 
         <!-- Uncomment the next section to view the Todo that is to be updated -->

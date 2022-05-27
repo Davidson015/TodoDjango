@@ -88,6 +88,14 @@ input[type=submit]:active {
   background-color: #c82333;
 }
 
+.update-choice {
+  display: flex;
+}
+
+.update-choice button {
+  margin: auto;
+}
+
 a {
   text-decoration: none;
   color: black;
