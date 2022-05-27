@@ -37,3 +37,15 @@ def updateitem(request, pk):
         "form": form,
     }
     return render(request, 'update.html', context)
+
+#DeletePage
+def deleteitem(request, pk):
+    item = Todo.objects.get(id=pk)
+    item.delete()
+    
+    return redirect('home')
+       
+    # context = {
+    #     "item": item
+    # }
+    # return render(request, 'delete.html', context)

@@ -1,0 +1,28 @@
+{% load static %}
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django Todo WebApp</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    
+    <div id="main">
+      <div id="container">
+        <h3>Todo App</h3>
+        {% if item.status|lower == "completed" %}
+          <h2><span class="completed">"{{ item.item|upper }}"</span> has been deleted successfully.</h2>
+        {% else %}
+          <h2>"{{ item.item|upper }}" has been deleted successfully.</h2>
+        {% endif %}
+        <button class="edit"><a href="{% url 'home' %}">View all Todo.</a></button>
+      </div>
+    </div>
+
+  </body>
+</html>

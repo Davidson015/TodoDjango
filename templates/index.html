@@ -44,7 +44,7 @@
                   <td>{{ i.status }}</td>
                   <td>
                     <button class="edit"><a href="{% url 'update' i.id %}">Edit</a></button>
-                    <button class="delete">Delete</button>
+                    <button class="delete"><a href="{% url 'delete' i.id %}">Delete</a></button>
                   </td>
                 </tr>
               {% elif i.is_updated == True %}
@@ -56,7 +56,7 @@
                   <td>{{ i.status }}</td>
                   <td>
                     <button class="edit"><a href="{% url 'update' i.id %}">Edit</a></button>
-                    <button class="delete">Delete</button>
+                    <button class="delete"><a href="{% url 'delete' i.id %}">Delete</a></button>
                   </td>
                 </tr>
               {% else %}
@@ -68,7 +68,7 @@
                   <td>{{ i.status }}</td>
                   <td>
                     <button class="edit"><a href="{% url 'update' i.id %}">Edit</a></button>
-                    <button class="delete">Delete</button>
+                    <button class="delete"><a href="{% url 'delete' i.id %}">Delete</a></button>
                   </td>
                 </tr>
               {% endif %}
