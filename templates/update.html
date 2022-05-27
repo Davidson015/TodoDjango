@@ -1,0 +1,47 @@
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django Todo WebApp</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    
+    <div id="main">
+      <div id="container">
+        <h3>Todo App</h3>
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {{form|crispy}}
+          <input type="submit" value="Save">
+        </form>
+{% comment %}       
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Todo item</th>
+              <th>Created At</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item|upper }}</td>
+              <td>{{ item.created_at|naturaltime }}</td>
+              <td>{{ item.status }}</td>
+            </tr>
+          </tbody>
+        </table> {% endcomment %}
+      </div>
+    </div>
+
+  </body>
+</html>

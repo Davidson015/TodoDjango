@@ -14,6 +14,7 @@ class Todo(models.Model):
     status = models.CharField(choices=status, max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_updated = models.BooleanField(default=False)
     class Meta:
         verbose_name = ("Todo")
         verbose_name_plural = ("Todos")
