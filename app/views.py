@@ -1,4 +1,3 @@
-# from multiprocessing import context
 from django.shortcuts import redirect, render
 from app.models import Todo
 from app.forms import TodoForm
@@ -42,9 +41,11 @@ def updateitem(request, pk):
 def deleteitem(request, pk):
     item = Todo.objects.get(id=pk)
     item.delete()
-    
+
     return redirect('home')
-       
+    
+
+    # Uncomment these next lines of code if you want to make use of the "delete.html" template
     # context = {
     #     "item": item
     # }

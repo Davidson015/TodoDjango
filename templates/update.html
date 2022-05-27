@@ -1,5 +1,4 @@
 {% load static %}
-{% load humanize %}
 {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
@@ -21,6 +20,8 @@
           {{form|crispy}}
           <input type="submit" value="Save">
         </form>
+
+        <!-- Uncomment the next section to view the Todo that is to be updated -->
 {% comment %}       
         <table>
           <thead>

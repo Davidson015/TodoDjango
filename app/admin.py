@@ -5,7 +5,7 @@ from app.models import Todo
 @admin.register(Todo)
 class TodoAdmin(admin.ModelAdmin):
   list_display = [
-    "item",
+    "title",
     "status",
     "created_at",
     "updated_at",

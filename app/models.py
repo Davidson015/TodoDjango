@@ -10,7 +10,7 @@ class Todo(models.Model):
         ('Completed', "Completed"),
     )
     
-    item = models.CharField(max_length=500)
+    title = models.CharField(max_length=500)
     status = models.CharField(choices=status, max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

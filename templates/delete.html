@@ -16,9 +16,9 @@
       <div id="container">
         <h3>Todo App</h3>
         {% if item.status|lower == "completed" %}
-          <h2><span class="completed">"{{ item.item|upper }}"</span> has been deleted successfully.</h2>
+          <h2><span class="completed">"{{ item.title|upper }}"</span> has been deleted successfully.</h2>
         {% else %}
-          <h2>"{{ item.item|upper }}" has been deleted successfully.</h2>
+          <h2>"{{ item.title|upper }}" has been deleted successfully.</h2>
         {% endif %}
         <button class="edit"><a href="{% url 'home' %}">View all Todo.</a></button>
       </div>
