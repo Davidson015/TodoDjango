@@ -35,7 +35,7 @@
           </thead>
           <tbody>
             {% for i in items %}
-              {% if i.status|lower == "completed" %}
+              {% if i.status|lower == "completed" and i.is_updated == False %}
                 <tr>
                   <td>{{ forloop.counter }}</td>
                   <td class="completed">{{ i.title|capfirst }}</td>
@@ -47,6 +47,18 @@
                     <button class="delete"><a href="{% url 'delete' i.id %}">Delete</a></button>
                   </td>
                 </tr>
+              {% elif i.status|lower == "completed" and i.is_updated == True %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="completed">{{ i.title|capfirst }}</td>
+                <td>{{ i.created_at|naturaltime|capfirst }}</td>
+                <td>{{ i.updated_at|naturaltime|capfirst }}</td>
+                <td>{{ i.status }}</td>
+                <td>
+                  <button class="edit"><a href="{% url 'update' i.id %}">Edit</a></button>
+                  <button class="delete"><a href="{% url 'delete' i.id %}">Delete</a></button>
+                </td>
+              </tr>
               {% elif i.is_updated == True %}
                 <tr>
                   <td>{{ forloop.counter }}</td>
